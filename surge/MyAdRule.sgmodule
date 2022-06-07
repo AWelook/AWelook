@@ -72,10 +72,6 @@
 # > 077 小米运动@kyle
 ^https:\/\/api-mifit-cn2\.huami\.com\/discovery\/mi\/cards\/startpage_ad - reject
 
-
-# > 075 Crunchyroll@Marcio2536,看番,无中文字幕,不推荐
-https://beta-api.crunchyroll.com/cms - response-body offset_ms":\d+ response-body offset_ms":99999999999999
-
 # > 074 看理想 - api.vistopia.com.cn
 ^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject
 
@@ -95,10 +91,6 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject
 # 自行复制引用下面的👇分流
 # host-suffix, admobile.top, reject
 https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex) - reject
-
-
-# > 067 微博去广告以及去除各部分推广@zmqcherish
-;remove,please see: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Rewrite/AdBlock/Weibo.conf
 
 # > 66 江苏移动10086（需卸载重装）@ddgksf2013
 ^https?+:\/\/wap\.js\.10086\.cn\/jsmccClient\/cd\/market_content\/api\/v\d\/market_content\.page\.query - reject-200
@@ -157,9 +149,6 @@ https://new-app-api.ylyk.com/v1/user/myinfo/adviser - reject
 # > 52 交行买单吧@HotKids
 ^https?:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/queryGuidePageAds\.do$ - reject-200
 ^https?:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/getPopAds\.do$  - reject-200
-
-# > 51 山丘阅读器（自行添加下面👇分流）@ddgksf2013
-# host, upload-images.jianshu.io, reject
 
 # > 50 滴滴出行（推荐英文版）@ddgksf2013 -res.xiaojukeji.com, 116.85.2.15, 116.85.2.14,
 https?://res\.xiaojukeji\.com\/resapi\/activity\/mget - reject
@@ -303,7 +292,6 @@ https://ad.12306.cn/* - reject
 # > 13 去哪儿开屏广告@ddgksf2013
 https://homefront.qunar.com/front/splash/ad - reject
 
-
 # > 11 百度地图开屏广告
 ^https:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.jpg - reject
 
@@ -330,12 +318,6 @@ https://homefront.qunar.com/front/splash/ad - reject
 # ～ RRTV_屏蔽限时弹窗@ddgksf2013
 https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 
-
-# > 05 什么值得买@blackmatrix7
-# > remove shenmezhidemai from this file, please see: https://github.com/blackmatrix7/ios_rule_script/blob/master/script/smzdm/smzdm_remove_ads.qxrewrite
-
-# > 04 哔哩哔哩@blackmatrix7
-# > remove bilibili from this file, please see: https://github.com/ddgksf2013/Cuttlefish/blob/master/Rewrite/AdBlock/Bilibili.conf
 
 # > 03 爱奇艺
 ^https?:\/\/.+\/cdn\/qiyiapp\/\d{8}\/.+&dis_dz= - reject-img
