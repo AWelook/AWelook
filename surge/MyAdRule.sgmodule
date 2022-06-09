@@ -1,5 +1,5 @@
-#!name=广告重写(zyz-20220608)
-#!desc=广告重写(zyz)
+#!name=Adrule by zhangjun
+#!desc=广告重写
 
 # >  /*  APP开屏广告拦截，APP启动广告拦截
 # > 同步更新
@@ -270,17 +270,6 @@ http:\/\/analytics\.163\.com\/ntes - reject
 ^http:\/\/rp\.hpplay\.cn\/logouts - reject
 ^https:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/ts_ad\/ - reject
 ^https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip - reject
-# > 百度贴吧（副作用:新回复等通知功能不可用,需手动进入消息tab页点击查看）
-^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/getAdInfo - reject
-^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/splashSchedule - reject
-^https?:\/\/c\.tieba\.baidu\.com\/c\/p\/img\?src= - reject-tinygif
-^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/logtogether\?cmd= - reject-tinygif
-^https?:\/\/.+?\/c\/s\/splashSchedule - reject
-^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads - reject
-^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/\w+\/\w+\/(sync|newRnSync|mlog) - reject
-^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/c\/s\/splashSchedule - reject
-^(http:\/\/c\.tieba\.baidu\.com\/(tiebaads\/commonbatch|c\/s\/sync)|https:\/\/afd\.baidu\.com\/afd\/entry) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
-^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 # > 百度翻译
 ^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo$ - reject
 ^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement - reject
@@ -864,17 +853,6 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier) - reject
 ^https?:\/\/.+\.googlevideo\.com\/videogoodput - reject-tinygif
 ^https?:\/\/(www\.bing)(\.\w{2,4}){1,2}\/(search\?.*|\?sa=|\?FORM)(?!.*?(apps=)).* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_contentFarm.js
-# > 油管
-ctier=[A-Z] url 302 ctier=A
-^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier) - reject
-
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) url 302 $1$2$3
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
-
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
-^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
-^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject
-^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject
 # > 58
 ^https?+:\/\/.+?\.58cdn\.com\.cn\/brandads\/ - reject
 ^https?+:\/\/app\.58\.com\/api\/home\/invite\/popupAdv - reject
@@ -1171,16 +1149,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https?:\/\/img-ys011\.didistatic\.com\/static\/ad_oss\/.*.jpg - reject
 # > 宝宝树
 ^https?:\/\/aimg\.babytreeimg\.com\/group1\/M00\/*\/*\/.*.jpg - reject
-# > 苹果天气（天气更新速度变慢，默认关闭）
-# > 1.全部天气数据类型
-# > 2.替换空气质量数据:WAQI
-# > 3.添加下一小时降水:气象在线
-# > 4.替换空气质量地图数据:WAQI
-# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url request-header If-None-Match:.+\r\n request-header \r\n
-
-# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/availability\/.* url script-response-body  https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Weather.Availability.js
-# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Weather.js
-# > ^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header  https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Weather.Map.js
 # > 苹果TestFlight App更新时, 提示"APP不可用"问题. 解除区域限制.
 ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-request-body https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
 # > 皮皮虾
