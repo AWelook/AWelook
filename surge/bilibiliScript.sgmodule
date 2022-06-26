@@ -1,6 +1,7 @@
 #!name=bilibili
 #!desc=去广告+优化界面
 
+[Script]
 # > 哔哩哔哩_繁體CC字幕轉中文簡體
 ^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_cc.js
 # > 哔哩哔哩_觀影頁面去廣告
@@ -49,5 +50,5 @@
 ;^https://app\.bilibili\.com/bilibili\.app\.dynamic\.v2\.Dynamic/DynAll$ url script-response-body https://raw.githubusercontent.com/yjqiang/surge_scripts/main/scripts/bilibili/bilibili_dynamic.js
 
 
-
+[MITM]
 hostname = %APPEND% app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com, api.bilibili.com, manga.bilibili.com, grpc.biliapi.net,api.biliapi.net
