@@ -1,0 +1,3 @@
+[Proxy]
+网易云音乐解锁 = http, azmb.kevinxiao.cf, 70, test-url=http://interface3.music.163.com
+网易云音乐解锁2 = http, music.griouges.cn, 39000, test-url=http://interface3.music.163.com
