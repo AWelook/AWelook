@@ -334,7 +334,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show - reject
 ^https?+:\/\/p\d\.meituan\.net\/wmbanner\/[A-Za-z0-9]+?\.jpg - reject
 ^https?+:\/\/p\d\.meituan\.net\/movie\/[A-Za-z0-9]+?\.jpg\?may_covertWebp - reject
 ^https?:\/\/s3plus\.meituan\.net\/.+?\/linglong\/ - reject
-^https?:\/\/s3plus\.meituan\.net\/v1\/mss_a002 - reject
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_a002 - reject-tinygif
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\? - reject
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo\? - reject
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture - reject
@@ -342,10 +342,23 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show - reject
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject
 ^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate? - reject
 ^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ - reject
-^https?:\/\/p\d.meituan.net\/movie\/.*?\?may_covertWebp - reject
+^https?:\/\/p\d.meituan.net\/movie\/.*?\?may_covertWebp - reject-tinygif
 ^https?:\/\/p\d{1}\.meituan\.net\/(adunion|display|linglong|mmc|wmbanner)\/ - reject
 # > 美团外卖
-^https?:\/\/img\.meituan\.net\/bizad\/.*.jpg - reject
+^https?:\/\/img\.meituan\.net\/bizad\/.*.jpg - reject 
+# > 雅虎
+^https?:\/\/m\.yap\.yahoo\.com\/v\d{2}\/getAds\.do - reject
+# > 58
+^https?+:\/\/.+?\.58cdn\.com\.cn\/brandads\/ - reject
+^https?+:\/\/app\.58\.com\/api\/home\/invite\/popupAdv - reject
+^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv)\/ - reject
+^https?:\/\/app\.58\.com\/api\/log\/ - reject
+
+# > 滴滴出行（推荐英文版）
+https?://res\.xiaojukeji\.com\/resapi\/activity\/mget - reject-dict
+https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices) - reject
+# > 滴滴
+^https?:\/\/img-ys011\.didistatic\.com\/static\/ad_oss\/.*.jpg - reject
 
 # > 雅虎
 ^https?:\/\/m\.yap\.yahoo\.com\/v\d{2}\/getAds\.do - reject
@@ -365,10 +378,17 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https?:\/\/elemecdn.com\/.+\/sitemap - reject
 ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
 ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 - reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 - reject-tinygif
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
 ^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? - reject
-^https?:\/\/elemecdn\.com\/.+?\/sitemap - reject
+^https?:\/\/elemecdn\.com\/.+?\/sitemap - reject-tinygif
 ^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ - reject
+
+# >> 有道词典
+^https?:\/\/oimage([a-z])([0-9])\.ydstatic\.com\/.+adpublish - reject
+^https?:\/\/oimage\w\d\.ydstatic\.com\/image\?.+?=adpublish - reject-tinygif
+^https?+:\/\/dsp-impr2\.youdao\.com\/adload - reject
+^https?:\/\/impservice\.dictapp\.youdao\.com\/imp\/request - reject-tinygif
+^https?:\/\/oral\.youdao\.com\/oral\/adInfo - reject-tinygif
