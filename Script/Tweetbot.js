@@ -5,6 +5,7 @@ https://push.tapbots.com/tweetbot/5/verify_subscription url script-response-body
 [mitm]
 hostname=*.tapbots.com
 
+*******************************/
 
 let obj = JSON.parse($response.body);
 
