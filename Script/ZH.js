@@ -1,4 +1,4 @@
-[script]
+[rewrite_local]
 #> XiaoTe@ddgksf2013
 ^https?:\/\/lcen\.xiaote\.net\/api\/graphql url response-body screenSplashAd response-body ddgksf2013
 #xiaohongshu
