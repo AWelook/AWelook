@@ -1,5 +1,5 @@
 
-https://push.tapbots.com/tweetbot/5/verify_subscription url script-response-body tweetbot.js
+https://push.tapbots.com/tweetbot/5/verify_subscription url script-response-body https://github.com/AWelook/AWelook/raw/main/Script/Tweetbot.js
 
 hostname=*.tapbots.com
 
