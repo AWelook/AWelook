@@ -1,4 +1,4 @@
-*/
+
 
 const $ = new Env("GLaDOS");
 const signcookie = "evil_gladoscookie";
